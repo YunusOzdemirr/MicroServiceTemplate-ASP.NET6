@@ -1,0 +1,1 @@
+# MicroServiceTemplate-ASP.NET6
