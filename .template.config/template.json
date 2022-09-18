@@ -1,11 +1,11 @@
 ﻿{
   "$schema": "http://json.schemastore.org/template",
-  "author": "yunus",
+  "author": "Yunus Ozdemir",
   "classifications": [],
   "description": "This template for micro services",
   "name": "Micro Service Template",
   "defaultName": "MicroServiceTemplate",
-  "identity": "MyTemplate.MicroServiceTemplate.CSharp",
+  "identity": "ASPNET6.MicroServiceTemplate",
   "groupIdentity": "MyTemplate.MicroServiceTemplate",
   "tags": {
     "language": "C#",
