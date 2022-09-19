@@ -41,6 +41,15 @@ namespace MicroServiceTemplate.API.Controllers
                 return Ok(result);
             return BadRequest(result);
         }
+
+        [ProducesResponseType(typeof(List<UserViewModel>),StatusCodes.Status200OK)]
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetAllUsersAsync(GetAllUsersQuery query)
+        {
+            var remoteIpAddress=HttpContext.Connection.RemoteIpAddress;
+            var result = await _mediator.Send(query);
+            return Ok(result);
+        }
     }
 }
 
