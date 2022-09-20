@@ -46,7 +46,6 @@ namespace MicroServiceTemplate.API.Controllers
         [HttpGet("[action]")]
         public async Task<IActionResult> GetAllUsersAsync(GetAllUsersQuery query)
         {
-            var remoteIpAddress=HttpContext.Connection.RemoteIpAddress;
             var result = await _mediator.Send(query);
             return Ok(result);
         }
