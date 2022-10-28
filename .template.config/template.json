@@ -1,64 +1,64 @@
 ﻿{
-  "$schema": "http://json.schemastore.org/template",
-  "author": "Yunus Ozdemir",
-  "classifications": [],
-  "description": "This template for micro services",
-  "name": "Micro Service Template",
-  "defaultName": "MicroServiceTemplate",
-  "identity": "ASPNET6.MicroServiceTemplate",
-  "groupIdentity": "MyTemplate.MicroServiceTemplate",
-  "tags": {
-    "language": "C#",
-    "type": "project",
-    "vsmac-category": "other/net/general"
-  },
-  "shortName": "MicroServiceTemplate",
-  "sourceName": "MicroServiceTemplate",
-  "guids": [
-    "{39961D26-7552-4552-9FF9-7F356F467955}",
-    "{0642CA49-2D47-47C0-AE41-45E63E3816CA}",
-    "{1512351E-66C8-4CDC-B4B7-C1591342A68A}",
-    "{BADF8C9E-4FA4-4D98-B335-3667A3307532}",
-    "{3153E753-4955-4E6B-B018-4915DEB6A996}",
-    "{46815C10-9501-4602-BB82-F8001B80FD84}",
-    "{B96DEABD-7315-4CCD-BA5B-3D19B192BC29}",
-    "{1D2237FF-E7E8-41A6-A1AB-1D1A8B4D763A}"
-  ],
-  "sources": [
-    {
-      "modifiers": [
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Yunus Ozdemir",
+    "classifications": [],
+    "description": "This template for micro services",
+    "name": "Micro Service Template",
+    "defaultName": "MicroServiceTemplate",
+    "identity": "ASPNET6.MicroServiceTemplate",
+    "groupIdentity": "MyTemplate.MicroServiceTemplate",
+    "tags": {
+        "language": "C#",
+        "type": "project",
+        "vsmac-category": "other/net/general"
+    },
+    "shortName": "MicroServiceTemplate",
+    "sourceName": "MicroServiceTemplate",
+    "guids": [
+        "{39961D26-7552-4552-9FF9-7F356F467955}",
+        "{0642CA49-2D47-47C0-AE41-45E63E3816CA}",
+        "{1512351E-66C8-4CDC-B4B7-C1591342A68A}",
+        "{BADF8C9E-4FA4-4D98-B335-3667A3307532}",
+        "{3153E753-4955-4E6B-B018-4915DEB6A996}",
+        "{46815C10-9501-4602-BB82-F8001B80FD84}",
+        "{B96DEABD-7315-4CCD-BA5B-3D19B192BC29}",
+        "{1D2237FF-E7E8-41A6-A1AB-1D1A8B4D763A}"
+    ],
+    "sources": [
         {
-          "exclude": [
-            ".vs/**/*"
-          ]
+            "modifiers": [
+                {
+                    "exclude": [
+                        ".vs/**/*"
+                    ]
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "primaryOutputs": [
-    {
-      "path": "Services/MicroServiceTemplate.API/MicroServiceTemplate.API.csproj"
-    },
-    {
-      "path": "Services/MicroServiceTemplate.API.UnitTest/MicroServiceTemplate.API.UnitTest.csproj"
-    },
-    {
-      "path": "Business/MicroServiceTemplate.Application/MicroServiceTemplate.Application.csproj"
-    },
-    {
-      "path": "Business/MicroServiceTemplate.Application.UnitTest/MicroServiceTemplate.Application.UnitTest.csproj"
-    },
-    {
-      "path": "Business/MicroServiceTemplate.Domain/MicroServiceTemplate.Domain.csproj"
-    },
-    {
-      "path": "Business/MicroServiceTemplate.Domain.UnitTest/MicroServiceTemplate.Domain.UnitTest.csproj"
-    },
-    {
-      "path": "Business/MicroServiceTemplate.Persistence/MicroServiceTemplate.Persistence.csproj"
-    },
-    {
-      "path": "Business/MicroServiceTemplate.Persistence.UnitTest/MicroServiceTemplate.Persistence.UnitTest.csproj"
-    }
-  ]
+    ],
+    "primaryOutputs": [
+        {
+            "path": "Services/MicroServiceTemplate.API/MicroServiceTemplate.API.csproj"
+        },
+        {
+            "path": "Services/MicroServiceTemplate.API.UnitTest/MicroServiceTemplate.API.UnitTest.csproj"
+        },
+        {
+            "path": "Business/MicroServiceTemplate.Application/MicroServiceTemplate.Application.csproj"
+        },
+        {
+            "path": "Business/MicroServiceTemplate.Application.UnitTest/MicroServiceTemplate.Application.UnitTest.csproj"
+        },
+        {
+            "path": "Business/MicroServiceTemplate.Domain/MicroServiceTemplate.Domain.csproj"
+        },
+        {
+            "path": "Business/MicroServiceTemplate.Domain.UnitTest/MicroServiceTemplate.Domain.UnitTest.csproj"
+        },
+        {
+            "path": "Business/MicroServiceTemplate.Persistence/MicroServiceTemplate.Persistence.csproj"
+        },
+        {
+            "path": "Business/MicroServiceTemplate.Persistence.UnitTest/MicroServiceTemplate.Persistence.UnitTest.csproj"
+        }
+    ]
 }
