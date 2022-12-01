@@ -8,7 +8,7 @@ namespace MicroServiceTemplate.Application.Behaviors
         private readonly ILogger<LoggingBehavior<TRequest, TResponse>> _logger;
 
         public LoggingBehavior(ILogger<LoggingBehavior<TRequest, TResponse>> logger)
-        { 
+        {
             _logger = logger;
         }
 
