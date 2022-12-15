@@ -7,6 +7,5 @@ global using MicroServiceTemplate.Application.Behaviors;
 global using Microsoft.Extensions.DependencyInjection;
 global using AutoMapper;
 global using Microsoft.EntityFrameworkCore;
-global using MicroServiceTemplate.Domain.Entities;
 global using MicroServiceTemplate.Application.Interfaces.Repositories;
 

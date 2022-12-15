@@ -15,13 +15,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServiceTemplate.Applic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServiceTemplate.Domain.UnitTest", "Business\MicroServiceTemplate.Domain.UnitTest\MicroServiceTemplate.Domain.UnitTest.csproj", "{46815C10-9501-4602-BB82-F8001B80FD84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServiceTemplate.Persistence", "Business\MicroServiceTemplate.Persistence\MicroServiceTemplate.Persistence.csproj", "{B96DEABD-7315-4CCD-BA5B-3D19B192BC29}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServiceTemplate.Persistence.UnitTest", "Business\MicroServiceTemplate.Persistence.UnitTest\MicroServiceTemplate.Persistence.UnitTest.csproj", "{1D2237FF-E7E8-41A6-A1AB-1D1A8B4D763A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServiceTemplate.API", "Services\MicroServiceTemplate.API\MicroServiceTemplate.API.csproj", "{39961D26-7552-4552-9FF9-7F356F467955}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServiceTemplate.API.UnitTest", "Services\MicroServiceTemplate.API.UnitTest\MicroServiceTemplate.API.UnitTest.csproj", "{0642CA49-2D47-47C0-AE41-45E63E3816CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServiceTemplate.Infrastructure", "Business\MicroServiceTemplate.Infrastructure\MicroServiceTemplate.Infrastructure.csproj", "{D3F71571-00EE-4C7F-B9BE-1ACC6C8185AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServiceTemplate.Infrastructure.UnitTest", "Business\MicroServiceTemplate.Infrastructure.UnitTest\MicroServiceTemplate.Infrastructure.UnitTest.csproj", "{922A9712-4489-4430-9B66-9989CD3E3923}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,14 +45,6 @@ Global
 		{46815C10-9501-4602-BB82-F8001B80FD84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46815C10-9501-4602-BB82-F8001B80FD84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46815C10-9501-4602-BB82-F8001B80FD84}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B96DEABD-7315-4CCD-BA5B-3D19B192BC29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B96DEABD-7315-4CCD-BA5B-3D19B192BC29}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B96DEABD-7315-4CCD-BA5B-3D19B192BC29}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B96DEABD-7315-4CCD-BA5B-3D19B192BC29}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1D2237FF-E7E8-41A6-A1AB-1D1A8B4D763A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D2237FF-E7E8-41A6-A1AB-1D1A8B4D763A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1D2237FF-E7E8-41A6-A1AB-1D1A8B4D763A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D2237FF-E7E8-41A6-A1AB-1D1A8B4D763A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{39961D26-7552-4552-9FF9-7F356F467955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{39961D26-7552-4552-9FF9-7F356F467955}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39961D26-7552-4552-9FF9-7F356F467955}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -61,6 +53,14 @@ Global
 		{0642CA49-2D47-47C0-AE41-45E63E3816CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0642CA49-2D47-47C0-AE41-45E63E3816CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0642CA49-2D47-47C0-AE41-45E63E3816CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3F71571-00EE-4C7F-B9BE-1ACC6C8185AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3F71571-00EE-4C7F-B9BE-1ACC6C8185AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3F71571-00EE-4C7F-B9BE-1ACC6C8185AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3F71571-00EE-4C7F-B9BE-1ACC6C8185AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{922A9712-4489-4430-9B66-9989CD3E3923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{922A9712-4489-4430-9B66-9989CD3E3923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{922A9712-4489-4430-9B66-9989CD3E3923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{922A9712-4489-4430-9B66-9989CD3E3923}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,9 +73,9 @@ Global
 		{3153E753-4955-4E6B-B018-4915DEB6A996} = {5024BC60-C9CD-4FF4-9A00-4511F0B2E913}
 		{BADF8C9E-4FA4-4D98-B335-3667A3307532} = {5024BC60-C9CD-4FF4-9A00-4511F0B2E913}
 		{46815C10-9501-4602-BB82-F8001B80FD84} = {5024BC60-C9CD-4FF4-9A00-4511F0B2E913}
-		{B96DEABD-7315-4CCD-BA5B-3D19B192BC29} = {5024BC60-C9CD-4FF4-9A00-4511F0B2E913}
-		{1D2237FF-E7E8-41A6-A1AB-1D1A8B4D763A} = {5024BC60-C9CD-4FF4-9A00-4511F0B2E913}
 		{39961D26-7552-4552-9FF9-7F356F467955} = {8327D15F-F399-4902-8462-DB1C004B3F30}
 		{0642CA49-2D47-47C0-AE41-45E63E3816CA} = {8327D15F-F399-4902-8462-DB1C004B3F30}
+		{D3F71571-00EE-4C7F-B9BE-1ACC6C8185AB} = {5024BC60-C9CD-4FF4-9A00-4511F0B2E913}
+		{922A9712-4489-4430-9B66-9989CD3E3923} = {5024BC60-C9CD-4FF4-9A00-4511F0B2E913}
 	EndGlobalSection
 EndGlobal

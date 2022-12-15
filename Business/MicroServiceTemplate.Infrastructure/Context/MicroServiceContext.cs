@@ -2,12 +2,12 @@
 using MediatR;
 using MicroServiceTemplate.Application.Interfaces.Context;
 using MicroServiceTemplate.Domain.Common;
-using MicroServiceTemplate.Persistence.Extensions;
+using MicroServiceTemplate.Infrastructure.Extensions;
 using Microsoft.EntityFrameworkCore;
 
-namespace MicroServiceTemplate.Persistence.Context
+namespace MicroServiceTemplate.Infrastructure.Context
 {
-    public class MicroServiceContext : DbContext, IApplicationDbContext,IUnitOfWork
+    public class MicroServiceContext : DbContext, IApplicationDbContext, IUnitOfWork
     {
         public const string DEFAULT_SCHEMA = "microServiceContext";
         private readonly IMediator _mediator;
@@ -17,25 +17,25 @@ namespace MicroServiceTemplate.Persistence.Context
         public MicroServiceContext()
         {
         }
-        public MicroServiceContext(DbContextOptions<MicroServiceContext> options) : base(options)
-        {
-        }
 
-        public MicroServiceContext(DbContextOptions<MicroServiceContext> options, IMediator mediator) : base(options)
-        {
-            _mediator = mediator;
-        }
+        public MicroServiceContext(DbContextOptions<MicroServiceContext> options, IMediator mediator)
+            : base(options) => _mediator = mediator;
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //modelBuilder.ApplyConfiguration(new UserConfiguration());
             base.OnModelCreating(modelBuilder);
         }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connectionString: @"Server=localhost;Database=MicroServiceContext;User=sa;Password=<YourStrong@Passw0rd>;");
+            optionsBuilder.UseSqlServer(
+                connectionString:
+                @"Server=localhost;Database=MicroServiceContext;User=sa;Password=<YourStrong@Passw0rd>;");
 
             base.OnConfiguring(optionsBuilder);
         }
+
         public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
         {
             await _mediator.DispatchDomainEventsAsync(this);
@@ -45,4 +45,3 @@ namespace MicroServiceTemplate.Persistence.Context
         }
     }
 }
-

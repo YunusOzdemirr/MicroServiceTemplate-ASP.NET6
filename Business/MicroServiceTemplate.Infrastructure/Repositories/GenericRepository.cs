@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq.Expressions;
 using MicroServiceTemplate.Domain.Common;
-using MicroServiceTemplate.Persistence.Context;
+using MicroServiceTemplate.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace MicroServiceTemplate.Persistence.Repositories
+namespace MicroServiceTemplate.Infrastructure.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {
@@ -15,7 +15,6 @@ namespace MicroServiceTemplate.Persistence.Repositories
         {
             _context = context;
         }
-
         public virtual async Task<bool> AddAsync(T entity)
         {
             await _context.AddAsync(entity);

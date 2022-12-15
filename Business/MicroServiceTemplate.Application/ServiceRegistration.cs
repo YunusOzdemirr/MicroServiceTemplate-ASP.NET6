@@ -6,7 +6,7 @@ namespace MicroServiceTemplate.Application
 	public static class ServiceRegistration
 	{
 
-        public static void AddAplicationServices(this IServiceCollection services)
+        public static void AddApplicationRegistration(this IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());

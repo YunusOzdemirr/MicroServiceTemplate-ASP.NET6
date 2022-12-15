@@ -1,0 +1,21 @@
+{
+    "Serilog": {
+        "Using": [ "Serilog.Sinks.Graylog", "Serilog.Sinks.Console" ],
+        "MinimumLevel": "Information",
+        "WriteTo": [
+            {
+                "Name": "Graylog",
+                "Args": {
+                    "hostnameOrAddress": "c_graylog",
+                    "port": "12201",
+                    "transportType": "Udp",
+                    "facility": "MicroService"
+                }
+            }
+        ],
+
+        "Properties": {
+            "Application": "MicroService"
+        }
+    }
+}

@@ -1,9 +1,9 @@
 ﻿using System;
 using MediatR;
 using MicroServiceTemplate.Domain.Common;
-using MicroServiceTemplate.Persistence.Context;
+using MicroServiceTemplate.Infrastructure.Context;
 
-namespace MicroServiceTemplate.Persistence.Extensions
+namespace MicroServiceTemplate.Infrastructure.Extensions
 {
     public static class MediatorExtension
     {

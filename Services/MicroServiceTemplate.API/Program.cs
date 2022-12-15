@@ -1,7 +1,9 @@
 ﻿using System.Reflection;
 using MediatR;
+using MicroServiceTemplate.Application;
 using MicroServiceTemplate.Application.Extensions;
-using MicroServiceTemplate.Persistence.Extensions;
+using MicroServiceTemplate.Infrastructure;
+using MicroServiceTemplate.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,8 +14,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAplicationServices();
-builder.Services.LoadServices(builder.Configuration);
+builder.Services.LoadInfrastructureServices(builder.Configuration);
 
+
+builder.Services
+    .AddLogging(configure => configure.AddConsole())
+    .AddApplicationRegistration(typeof(Startup))
+    .AddPersistenceRegistration(Configuration)
+    .ConfigureEventHandlers()
+    .AddServiceDiscoveryRegistration(Configuration)
+    ;
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
