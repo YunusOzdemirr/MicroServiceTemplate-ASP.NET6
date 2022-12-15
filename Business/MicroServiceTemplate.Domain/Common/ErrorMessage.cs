@@ -22,3 +22,4 @@ namespace MicroServiceTemplate.Domain.Common
     }
 }
 
+

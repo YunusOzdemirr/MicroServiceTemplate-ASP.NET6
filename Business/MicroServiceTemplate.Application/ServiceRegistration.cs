@@ -1,11 +1,11 @@
 ﻿using System;
-
 using System.Reflection;
 
-namespace MicroServiceTemplate.Application.Extensions
+namespace MicroServiceTemplate.Application
 {
-    public static class ServiceCollectionExtensions
-    {
+	public static class ServiceRegistration
+	{
+
         public static void AddAplicationServices(this IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
@@ -14,7 +14,6 @@ namespace MicroServiceTemplate.Application.Extensions
 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
-
         }
     }
 }

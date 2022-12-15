@@ -1,22 +1,33 @@
 ﻿using System;
+using MediatR;
 using MicroServiceTemplate.Application.Interfaces.Context;
-using MicroServiceTemplate.Domain.Entities;
-using MicroServiceTemplate.Persistence.Context.Configurations;
+using MicroServiceTemplate.Domain.Common;
+using MicroServiceTemplate.Persistence.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace MicroServiceTemplate.Persistence.Context
 {
-    public class MicroServiceContext:DbContext,IApplicationDbContext
+    public class MicroServiceContext : DbContext, IApplicationDbContext,IUnitOfWork
     {
+        public const string DEFAULT_SCHEMA = "microServiceContext";
+        private readonly IMediator _mediator;
+
+        //public DbSet<User> Users { get; set; }
+
         public MicroServiceContext()
         {
         }
-        public MicroServiceContext(DbContextOptions<MicroServiceContext> options):base(options)
+        public MicroServiceContext(DbContextOptions<MicroServiceContext> options) : base(options)
         {
+        }
+
+        public MicroServiceContext(DbContextOptions<MicroServiceContext> options, IMediator mediator) : base(options)
+        {
+            _mediator = mediator;
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new UserConfiguration());
+            //modelBuilder.ApplyConfiguration(new UserConfiguration());
             base.OnModelCreating(modelBuilder);
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -25,7 +36,13 @@ namespace MicroServiceTemplate.Persistence.Context
 
             base.OnConfiguring(optionsBuilder);
         }
-        public DbSet<User> Users { get; set; }
+        public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default)
+        {
+            await _mediator.DispatchDomainEventsAsync(this);
+            await base.SaveChangesAsync(cancellationToken);
+
+            return true;
+        }
     }
 }
 

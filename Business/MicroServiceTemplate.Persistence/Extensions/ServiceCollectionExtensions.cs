@@ -13,8 +13,6 @@ namespace MicroServiceTemplate.Persistence.Extensions
         public static void LoadServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<MicroServiceContext>();
-            services.AddScoped<IUserRepository, UserRepository>();
-
         }
     }
 }
