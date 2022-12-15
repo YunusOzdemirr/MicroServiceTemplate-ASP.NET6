@@ -5,7 +5,6 @@ namespace MicroServiceTemplate.Application
 {
 	public static class ServiceRegistration
 	{
-
         public static void AddApplicationRegistration(this IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
