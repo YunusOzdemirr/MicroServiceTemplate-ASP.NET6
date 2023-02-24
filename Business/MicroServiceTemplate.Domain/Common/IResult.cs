@@ -1,14 +1,17 @@
 ﻿using System;
+using MicroServiceTemplate.Domain.Enums;
+
 namespace MicroServiceTemplate.Domain.Common
 {
     public interface IResult
     {
-        public List<string> Messages { get; set; }
+        public string Message { get; set; }
         public bool Succeeded { get; set; }
+        public object Data { get; set; }
+        public ResultStatus ResultStatus { get; set; }
     }
-    public interface IResult<out T> : IResult
+    public interface IResult<T> : IResult
     {
-        T Data { get; }
     }
 }
 

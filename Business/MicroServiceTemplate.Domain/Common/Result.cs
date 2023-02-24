@@ -4,66 +4,128 @@ namespace MicroServiceTemplate.Domain.Common
 {
     public class Result : IResult
     {
-        public List<string> Messages { get; set; } = new List<string>();
+        public string Message { get; set; }
         public bool Succeeded { get; set; }
-        public object? Data { get; set; }
+        public object Data { get; set; }
         public ResultStatus ResultStatus { get; set; }
 
-        public static IResult Fail()
+        public static async Task<IResult> FailAsync()
         {
-            return new Result { ResultStatus = ResultStatus.Error, Succeeded = false };
+            var result = new Result { ResultStatus = ResultStatus.Error, Succeeded = false };
+            return await Task.FromResult(result);
         }
-        public static IResult Fail(string message)
+
+        public static async Task<IResult> FailAsync(ResultStatus resultStatus)
         {
-            return new Result { ResultStatus = ResultStatus.Error, Succeeded = false, Messages = new List<string>() { message } };
+            var result = new Result { ResultStatus = resultStatus, Succeeded = false };
+            return await Task.FromResult(result);
         }
-        public static IResult Fail(List<string> messages)
+
+        public static async Task<IResult> FailAsync(string message)
         {
-            return new Result { ResultStatus = ResultStatus.Error, Succeeded = false, Messages = messages };
+            var result = new Result { ResultStatus = ResultStatus.Error, Succeeded = false, Message = message };
+            return await Task.FromResult(result);
         }
-        public static Task<IResult> FailAsync()
+
+        public static async Task<IResult> FailAsync(string message, ResultStatus resultStatus)
         {
-            return Task.FromResult(Fail());
+            var result = new Result { ResultStatus = resultStatus, Succeeded = false, Message = message };
+            return await Task.FromResult(result);
         }
-        public static Task<IResult> FailAsync(string message)
+
+        public static async Task<IResult> SuccessAsync()
         {
-            return Task.FromResult(Fail(message));
+            var result = new Result { ResultStatus = ResultStatus.Success, Succeeded = true };
+            return await Task.FromResult(result);
         }
-        public static Task<IResult> FailAsync(List<string> messages)
+
+        public static async Task<IResult> SuccessAsync(object data)
         {
-            return Task.FromResult(Fail(messages));
+            var result = new Result { ResultStatus = ResultStatus.Success, Succeeded = true, Data = data };
+            return await Task.FromResult(result);
         }
-        public static IResult Success()
+
+        public static async Task<IResult> SuccessAsync(string message)
         {
-            return new Result { ResultStatus = ResultStatus.Success, Succeeded = true };
+            var result = new Result { ResultStatus = ResultStatus.Success, Succeeded = true, Message = message };
+            return await Task.FromResult(result);
         }
-        public static IResult Success(string message)
+
+        public static async Task<IResult> SuccessAsync(string message, object data)
         {
-            return new Result { ResultStatus = ResultStatus.Success, Succeeded = true, Messages = new List<string> { message } };
+            var result = new Result
+                { ResultStatus = ResultStatus.Success, Succeeded = true, Message = message, Data = data };
+            return await Task.FromResult(result);
         }
-        public static IResult Success(string message, object data)
+    }
+
+    public class Result<T> : IResult<T>
+    {
+        public string Message { get; set; }
+        public bool Succeeded { get; set; }
+        public object Data { get; set; }
+        public ResultStatus ResultStatus { get; set; }
+
+        public static async Task<IResult<T>> FailAsync()
         {
-            return new Result { ResultStatus = ResultStatus.Success, Succeeded = true, Messages = new List<string> { message }, Data = data };
+            var result = new Result<T> { ResultStatus = ResultStatus.Error, Succeeded = false };
+            return await Task.FromResult(result);
         }
-        public static IResult Success(List<string> messages)
+
+        public static async Task<IResult<T>> FailAsync(ResultStatus resultStatus)
         {
-            return new Result { ResultStatus = ResultStatus.Success, Succeeded = true, Messages = messages };
+            var result = new Result<T> { ResultStatus = resultStatus, Succeeded = false };
+            return await Task.FromResult(result);
         }
-        public static Task<IResult> SuccessAsync()
+
+        public static async Task<IResult<T>> FailAsync(string message, ResultStatus resultStatus)
         {
-            return Task.FromResult(Success());
+            var result = new Result<T> { ResultStatus = resultStatus, Succeeded = false, Message = message };
+            return await Task.FromResult(result);
         }
-        public static Task<IResult> SuccessAsync(string message, object data)
+
+        public static async Task<IResult<T>> FailAsync(string message)
         {
-            return Task.FromResult(Success(message));
+            var result = new Result<T> { ResultStatus = ResultStatus.Error, Succeeded = false, Message = message };
+            return await Task.FromResult(result);
         }
-        public static Task<IResult> SuccessAsync(string message)
+
+        public static async Task<IResult<T>> FailAsync(T data)
         {
-            return Task.FromResult(Success(message));
+            var result = new Result<T> { ResultStatus = ResultStatus.Error, Succeeded = false, Data = data };
+            return await Task.FromResult(result);
         }
-        public static Task<IResult> SuccessAsync(List<string> messages)
+
+        public static async Task<IResult<T>> FailAsync(string message, T data)
         {
-            return Task.FromResult(Success(messages));
+            var result = new Result<T>
+                { ResultStatus = ResultStatus.Error, Succeeded = false, Message = message, Data = data };
+            return await Task.FromResult(result);
+        }
+
+        public static async Task<IResult<T>> SuccessAsync(T data)
+        {
+            var result = new Result<T> { ResultStatus = ResultStatus.Success, Succeeded = true, Data = data };
+            return await Task.FromResult(result);
+        }
+
+        public static async Task<IResult<T>> SuccessAsync()
+        {
+            var result = new Result<T> { ResultStatus = ResultStatus.Success, Succeeded = true };
+            return await Task.FromResult(result);
+        }
+
+        public static async Task<IResult<T>> SuccessAsync(string message)
+        {
+            var result = new Result<T> { ResultStatus = ResultStatus.Success, Succeeded = true, Message = message };
+            return await Task.FromResult(result);
+        }
+
+        public static async Task<IResult<T>> SuccessAsync(string message, T data)
+        {
+            var result = new Result<T>
+                { ResultStatus = ResultStatus.Success, Succeeded = true, Message = message, Data = data };
+            return await Task.FromResult(result);
         }
     }
 }

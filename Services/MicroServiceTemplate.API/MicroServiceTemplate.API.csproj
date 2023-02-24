@@ -8,16 +8,18 @@
 
   <ItemGroup>
     <PackageReference Include="Consul" Version="1.6.10.8" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.12" />
     <PackageReference Include="Polly" Version="7.2.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="MediatR" Version="11.1.0" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Controllers\" />
     <None Remove="Models\" />
     <None Remove="Models\UserResponseModels\" />
+    <None Remove="MediatR" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers" />
