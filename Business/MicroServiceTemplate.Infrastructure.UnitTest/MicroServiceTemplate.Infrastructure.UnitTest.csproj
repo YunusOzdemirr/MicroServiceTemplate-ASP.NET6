@@ -24,5 +24,6 @@
   <ItemGroup>
     <ProjectReference Include="..\MicroServiceTemplate.Domain\MicroServiceTemplate.Domain.csproj" />
     <ProjectReference Include="..\MicroServiceTemplate.Application\MicroServiceTemplate.Application.csproj" />
+    <ProjectReference Include="..\MicroServiceTemplate.Infrastructure\MicroServiceTemplate.Infrastructure.csproj" />
   </ItemGroup>
 </Project>
