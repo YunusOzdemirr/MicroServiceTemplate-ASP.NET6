@@ -15,13 +15,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServiceTemplate.Applic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServiceTemplate.Domain.UnitTest", "Business\MicroServiceTemplate.Domain.UnitTest\MicroServiceTemplate.Domain.UnitTest.csproj", "{46815C10-9501-4602-BB82-F8001B80FD84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServiceTemplate.API", "Services\MicroServiceTemplate.API\MicroServiceTemplate.API.csproj", "{39961D26-7552-4552-9FF9-7F356F467955}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServiceTemplate.API.UnitTest", "Services\MicroServiceTemplate.API.UnitTest\MicroServiceTemplate.API.UnitTest.csproj", "{0642CA49-2D47-47C0-AE41-45E63E3816CA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServiceTemplate.Infrastructure", "Business\MicroServiceTemplate.Infrastructure\MicroServiceTemplate.Infrastructure.csproj", "{3EB947C4-4336-4934-8E8C-9CE3D661B1C8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServiceTemplate.Infrastructure.UnitTest", "Business\MicroServiceTemplate.Infrastructure.UnitTest\MicroServiceTemplate.Infrastructure.UnitTest.csproj", "{7D755BD3-D981-49D2-9AFE-CE31F9926BDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServiceTemplate.API", "Services\MicroServiceTemplate.API\MicroServiceTemplate.API.csproj", "{39961D26-7552-4552-9FF9-7F356F467955}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServiceTemplate.API.UnitTest", "Services\MicroServiceTemplate.API.UnitTest\MicroServiceTemplate.API.UnitTest.csproj", "{0642CA49-2D47-47C0-AE41-45E63E3816CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
