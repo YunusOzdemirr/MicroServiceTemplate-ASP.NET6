@@ -55,10 +55,10 @@
             "path": "Business/MicroServiceTemplate.Domain.UnitTest/MicroServiceTemplate.Domain.UnitTest.csproj"
         },
         {
-            "path": "Business/MicroServiceTemplate.Persistence/MicroServiceTemplate.Persistence.csproj"
+            "path": "Business/MicroServiceTemplate.Infrastructure/MicroServiceTemplate.Infrastructure.csproj"
         },
         {
-            "path": "Business/MicroServiceTemplate.Persistence.UnitTest/MicroServiceTemplate.Persistence.UnitTest.csproj"
+            "path": "Business/MicroServiceTemplate.Infrastructure.UnitTest/MicroServiceTemplate.Infrastructure.UnitTest.csproj"
         }
     ]
 }
