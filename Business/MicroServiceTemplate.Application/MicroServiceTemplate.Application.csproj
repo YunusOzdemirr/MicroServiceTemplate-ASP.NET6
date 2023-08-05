@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Behaviors\" />
+    <Folder Include="DomainEventHandlers\" />
     <Folder Include="Dtos\" />
     <Folder Include="Extensions\" />
     <Folder Include="Features\" />
@@ -49,7 +50,6 @@
     <Folder Include="Exceptions\" />
     <Folder Include="Mapping\" />
     <Folder Include="Validations\" />
-    <Folder Include="DomainEventHandlers\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MediatR" Version="11.1.0" />
